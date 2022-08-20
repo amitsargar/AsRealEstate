@@ -16,7 +16,7 @@ namespace AsRealEstate2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Member", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Country", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
