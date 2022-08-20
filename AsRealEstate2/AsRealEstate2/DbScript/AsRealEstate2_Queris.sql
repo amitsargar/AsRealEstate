@@ -21,10 +21,10 @@ CREATE TABLE Members(
 	MemberId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	MemberName nvarchar(50) NOT NULL,
 	DOB date NOT NULL,
-	ContactNo nvarchar(15) NOT NULL,
+	ContactNo decimal(10,0) NOT NULL,
 	EmailId nvarchar(50) NOT NULL,
 	Gender int FOREIGN KEY REFERENCES Genders (GenderId),
-	Image varchar(100) NULL,
+	ImagePath varchar(100) NULL,
 	RoleId int FOREIGN KEY REFERENCES Roles (RoleId),
 	IsActive bit NOT NULL default 1,
 	CreatedBy int NOT null default 1,
@@ -33,7 +33,7 @@ CREATE TABLE Members(
 	ModifiedDate datetime NULL
 	);
 
-insert into Members(MemberName,DOB,ContactNo,EmailId,Gender,Image,RoleId) values('Shirish','09-05-1989',7776834574,'teleshri@gmail.com',1,'',1);
+insert into Members(MemberName,DOB,ContactNo,EmailId,Gender,ImagePath,RoleId) values('Shirish','09-05-1989',7776834574,'teleshri@gmail.com',1,'',1);
 
 
 CREATE TABLE PropertyModes(
