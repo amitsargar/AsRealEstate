@@ -18,6 +18,7 @@ namespace AsRealEstate2.Models
         //public string GenderName { get; set; }
         public string ImagePath { get; set; }
         public int RoleId { get; set; }
+        public string Password { get; set; }
         public bool IsActive { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }

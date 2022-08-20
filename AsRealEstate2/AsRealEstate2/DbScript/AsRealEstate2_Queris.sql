@@ -26,6 +26,7 @@ CREATE TABLE Members(
 	Gender int FOREIGN KEY REFERENCES Genders (GenderId),
 	ImagePath varchar(100) NULL,
 	RoleId int FOREIGN KEY REFERENCES Roles (RoleId),
+	Password varchar(100) NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int NOT null default 1,
 	CreatedDate datetime NOT NULL DEFAULT getdate(),
