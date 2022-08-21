@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace AsRealEstate2.Models
 {
-    public class Property
+    public class ListedProperty
     {
-        public int Id { get; set; }
-        public int PropertModeID { get; set; }
+        [Key]
+        public int ListedPropertyId { get; set; }
+        public int PropertyModeID { get; set; }
+        public int CategoryId { get; set; }
         public decimal Size { get; set; }
         public int OwnerID { get; set; }
         public decimal Prize { get; set; }
         public int Bedroom { get; set; }
         public int Bathroom { get; set; }
-        public DateTime Property_Completed_On { get; set; }
-        public bool lift { get; set; }
+        public DateTime PropertyCompletedOn { get; set; }
+        public bool Lift { get; set; }
         public int Balcony { get; set; }
         public bool Backyard { get; set; }
         public bool SwimingPool { get; set; }
@@ -30,7 +30,7 @@ namespace AsRealEstate2.Models
         public int PinCode { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int ModifiedBy { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public int? ModifiedBy { get; set; }
+        public DateTime? ModifiedDate { get; set; }
     }
 }

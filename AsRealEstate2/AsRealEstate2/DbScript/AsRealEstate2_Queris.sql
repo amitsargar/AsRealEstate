@@ -1,3 +1,4 @@
+--Drop Database AsRealEstate2;
 --CREATE DATABASE AsRealEstate2;
 --USE AsRealEstate2;
 
@@ -38,7 +39,7 @@ insert into Members(MemberName,DOB,ContactNo,EmailId,Gender,ImagePath,RoleId) va
 
 
 CREATE TABLE PropertyModes(
-	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PropertyModeId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
@@ -48,18 +49,18 @@ CREATE TABLE PropertyModes(
 	);
 
 CREATE TABLE Categories(
-	Id int primary key IDENTITY(1,1) NOT NULL,
+	CategoryId int primary key IDENTITY(1,1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
 	CreatedDate datetime NOT NULL DEFAULT getdate(),
 	ModifiedBy int,
 	ModifiedDate datetime NULL,
-	ProperyModeId int FOREIGN KEY REFERENCES PropertyModes (Id)
+	PropertyModeId int FOREIGN KEY REFERENCES PropertyModes (PropertyModeId)
 	);
 
 CREATE TABLE Countries(
-	Id int primary key IDENTITY(1,1) NOT NULL,
+	CountryId int primary key IDENTITY(1,1) NOT NULL,
 	Name nvarchar(max) NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
@@ -68,59 +69,61 @@ CREATE TABLE Countries(
 	ModifiedDate datetime NOT NULL);
 
 CREATE TABLE States(
-	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	StateId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
 	CreatedDate datetime NOT NULL DEFAULT getdate(),
 	ModifiedBy int,
 	ModifiedDate datetime NULL,
-	CountryId int FOREIGN KEY REFERENCES Countries (Id));
+	CountryId int FOREIGN KEY REFERENCES Countries (CountryId));
 	
 CREATE TABLE Cities(
-	Id int primary key  IDENTITY(1,1) NOT NULL,
+	CityId int primary key  IDENTITY(1,1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
 	CreatedDate datetime NOT NULL DEFAULT getdate(),
 	ModifiedBy int,
 	ModifiedDate datetime NULL,
-	StateId int FOREIGN KEY REFERENCES States (Id)
+	StateId int FOREIGN KEY REFERENCES States (StateId)
 	);
 	
 CREATE TABLE Locations(
-	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	LocationId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
 	IsActive bit NOT NULL default 1,
 	CreatedBy int FOREIGN KEY REFERENCES Members (MemberId),
 	CreatedDate datetime NOT NULL DEFAULT getdate(),
 	ModifiedBy int,
 	ModifiedDate datetime NULL,
-	CityId int FOREIGN KEY REFERENCES Cities (Id)
+	CityId int FOREIGN KEY REFERENCES Cities (CityId)
 );
-create Table Properties
+
+
+create Table ListedProperties
 (
-	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	PropertModeID int  FOREIGN KEY REFERENCES PropertyModes (Id),	
-	Size  decimal(10,0) NOT NULL,
+	ListedPropertyId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PropertyModeID int  FOREIGN KEY REFERENCES PropertyModes (PropertyModeID),	
+	Size  decimal(10,2) NOT NULL,
 	OwnerID int NOT NULL,
-	Prize decimal(5,2) NOT NULL,
+	Prize decimal(11,2) NOT NULL,
 	Bedroom int,
 	Bathroom int,
-	Property_Completed_On Datetime,  
-	lift bit,
+	PropertyCompletedOn Datetime,  
+	Lift bit,
 	Balcony int,
 	Backyard bit,
 	SwimingPool bit,
 	Parking int,
-	Comment nvarchar(100),
-	Rating decimal(1,1),
-	CountryId int FOREIGN KEY REFERENCES Countries (Id),
-	StateId int FOREIGN KEY REFERENCES States (Id),
-	CityId int FOREIGN KEY REFERENCES Cities (Id),
-	LocationId int FOREIGN KEY REFERENCES Locations (Id),
-	Address nvarchar(100) NOT NULL,
-	PinCode int,
+	Comment varchar(500),
+	Rating int,
+	CountryId int FOREIGN KEY REFERENCES Countries (CountryId),
+	StateId int FOREIGN KEY REFERENCES States (StateId),
+	CityId int FOREIGN KEY REFERENCES Cities (CityId),
+	LocationId int FOREIGN KEY REFERENCES Locations (LocationId),
+	PropertyAddress varchar(100) NOT NULL,
+	PinCode decimal(6,0),
 	CreatedBy int,
 	CreatedDate DateTime,
 	ModifiedBy int,

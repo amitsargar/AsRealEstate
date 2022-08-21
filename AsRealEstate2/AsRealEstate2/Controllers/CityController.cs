@@ -30,7 +30,7 @@ namespace AsRealEstate2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -38,7 +38,7 @@ namespace AsRealEstate2.Controllers
         }
         public ActionResult Edit(int Id)
         {
-            var city = db.Cities.Single(c => c.Id == Id);
+            var city = db.Cities.Single(c => c.CityId == Id);
             return View(city);
         }
 
@@ -63,7 +63,7 @@ namespace AsRealEstate2.Controllers
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -71,20 +71,20 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Details(int Id)
         {
-            var city = db.Cities.Single(c => c.Id == Id);
+            var city = db.Cities.Single(c => c.CityId == Id);
             return View(city);
         }
 
         public ActionResult Delete(int Id)
         {
-            var city = db.Cities.Single(c => c.Id == Id);
+            var city = db.Cities.Single(c => c.CityId == Id);
             return View(city);
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var city = db.Cities.Single(c => c.Id == Id);
+            var city = db.Cities.Single(c => c.CityId == Id);
             db.Cities.Remove(city);
             db.SaveChanges();
             return RedirectToAction("Index");

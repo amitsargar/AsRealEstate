@@ -17,6 +17,8 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name");
+            ViewBag.CreatedBy = new SelectList(db.Members, "MemberId", "MemberName");
             return View();
         }
 
@@ -29,7 +31,7 @@ namespace AsRealEstate2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -37,7 +39,7 @@ namespace AsRealEstate2.Controllers
         }
         public ActionResult Edit(int Id)
         {
-            var state = db.States.Single(c => c.Id == Id);
+            var state = db.States.Single(c => c.StateId == Id);
             return View(state);
         }
 
@@ -62,7 +64,7 @@ namespace AsRealEstate2.Controllers
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -70,20 +72,20 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Details(int Id)
         {
-            var state = db.States.Single(c => c.Id == Id);
+            var state = db.States.Single(c => c.StateId == Id);
             return View(state);
         }
 
         public ActionResult Delete(int Id)
         {
-            var state = db.States.Single(c => c.Id == Id);
+            var state = db.States.Single(c => c.StateId == Id);
             return View(state);
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var state = db.States.Single(c => c.Id == Id);
+            var state = db.States.Single(c => c.StateId == Id);
             db.States.Remove(state);
             db.SaveChanges();
             return RedirectToAction("Index");

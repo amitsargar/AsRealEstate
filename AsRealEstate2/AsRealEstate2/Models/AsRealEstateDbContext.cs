@@ -16,6 +16,6 @@ namespace AsRealEstate2.Models
         public DbSet<Location> Locations { get; set; }
         public DbSet<PropertyMode> PropertyModes { get; set; }
         public DbSet<State> States { get; set; }
-        public DbSet<Property> Properties { get; set; }
+        public DbSet<ListedProperty> ListedProperties { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace AsRealEstate2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -67,7 +67,7 @@ namespace AsRealEstate2.Controllers
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }

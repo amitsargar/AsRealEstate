@@ -158,8 +158,8 @@ D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\bin\System.Web.WebPages.Razor.xm
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\bin\Newtonsoft.Json.xml
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\bin\Antlr3.Runtime.pdb
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.csproj.AssemblyReference.cache
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.csproj.CoreCompileInputs.cache
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.csproj.CopyComplete
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.dll
 D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.pdb
+D:\Git\AsRealEstate\AsRealEstate2\AsRealEstate2\obj\Debug\AsRealEstate2.csproj.AssemblyReference.cache

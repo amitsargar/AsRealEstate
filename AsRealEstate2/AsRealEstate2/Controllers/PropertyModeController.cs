@@ -29,7 +29,7 @@ namespace AsRealEstate2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -37,7 +37,7 @@ namespace AsRealEstate2.Controllers
         }
         public ActionResult Edit(int Id)
         {
-            var propertyMode = db.PropertyModes.Single(c => c.Id == Id);
+            var propertyMode = db.PropertyModes.Single(c => c.PropertyModeId == Id);
             return View(propertyMode);
         }
 
@@ -62,7 +62,7 @@ namespace AsRealEstate2.Controllers
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -70,20 +70,20 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Details(int Id)
         {
-            var propertyMode = db.PropertyModes.Single(c => c.Id == Id);
+            var propertyMode = db.PropertyModes.Single(c => c.PropertyModeId == Id);
             return View(propertyMode);
         }
 
         public ActionResult Delete(int Id)
         {
-            var propertyMode = db.PropertyModes.Single(c => c.Id == Id);
+            var propertyMode = db.PropertyModes.Single(c => c.PropertyModeId == Id);
             return View(propertyMode);
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var propertyMode = db.PropertyModes.Single(c => c.Id == Id);
+            var propertyMode = db.PropertyModes.Single(c => c.PropertyModeId == Id);
             db.PropertyModes.Remove(propertyMode);
             db.SaveChanges();
             return RedirectToAction("Index");

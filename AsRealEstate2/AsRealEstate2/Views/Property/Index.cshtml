@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AsRealEstate2.Models.Property>
+﻿@model IEnumerable<AsRealEstate2.Models.ListedProperty>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PropertModeID)
+            @Html.DisplayNameFor(model => model.PropertyModeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Size)
@@ -30,10 +33,10 @@
             @Html.DisplayNameFor(model => model.Bathroom)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Property_Completed_On)
+            @Html.DisplayNameFor(model => model.PropertyCompletedOn)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lift)
+            @Html.DisplayNameFor(model => model.Lift)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Balcony)
@@ -89,7 +92,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.PropertModeID)
+            @Html.DisplayFor(modelItem => item.PropertyModeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Size)
@@ -107,10 +113,10 @@
             @Html.DisplayFor(modelItem => item.Bathroom)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Property_Completed_On)
+            @Html.DisplayFor(modelItem => item.PropertyCompletedOn)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.lift)
+            @Html.DisplayFor(modelItem => item.Lift)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Balcony)
@@ -161,9 +167,9 @@
             @Html.DisplayFor(modelItem => item.ModifiedDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ListedPropertyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ListedPropertyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ListedPropertyId })
         </td>
     </tr>
 }

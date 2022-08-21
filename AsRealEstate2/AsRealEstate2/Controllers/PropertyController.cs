@@ -14,8 +14,8 @@ namespace AsRealEstate2.Controllers
         // GET: Role
         public ActionResult Index()
         {
-            var properties = db.Properties.ToList();
-            return View(properties);
+            var listedProperties = db.ListedProperties.ToList();
+            return View(listedProperties);
         }
 
         public ActionResult Create()
@@ -24,15 +24,15 @@ namespace AsRealEstate2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Property property)
+        public ActionResult Create(ListedProperty listedProperty)
         {
             try
             {
-                db.Properties.Add(property);
+                db.ListedProperties.Add(listedProperty);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -40,13 +40,13 @@ namespace AsRealEstate2.Controllers
         }
         public ActionResult Edit(int Id)
         {
-            var property = db.Properties.Single(c => c.Id == Id);
+            var property = db.ListedProperties.Single(c => c.ListedPropertyId == Id);
             return View(property);
         }
 
 
         [HttpPost]
-        public ActionResult Edit(int Id, Property property)
+        public ActionResult Edit(int Id, ListedProperty listedProperty)
         {
             try
             {
@@ -59,13 +59,13 @@ namespace AsRealEstate2.Controllers
                 //}
                 if (ModelState.IsValid)
                 {
-                    db.Entry(property).State = EntityState.Modified;
+                    db.Entry(listedProperty).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -73,21 +73,21 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Details(int Id)
         {
-            var property = db.Properties.Single(c => c.Id == Id);
-            return View(property);
+            var listedProperty = db.ListedProperties.Single(c => c.ListedPropertyId == Id);
+            return View(listedProperty);
         }
 
         public ActionResult Delete(int Id)
         {
-            var property = db.Properties.Single(c => c.Id == Id);
-            return View(property);
+            var listedProperty = db.ListedProperties.Single(c => c.ListedPropertyId == Id);
+            return View(listedProperty);
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var property = db.Properties.Single(c => c.Id == Id);
-            db.Properties.Remove(property);
+            var listedProperty = db.ListedProperties.Single(c => c.ListedPropertyId == Id);
+            db.ListedProperties.Remove(listedProperty);
             db.SaveChanges();
             return RedirectToAction("Index");
 

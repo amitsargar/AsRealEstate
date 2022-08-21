@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.ModifiedDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProperyModeId)
+            @Html.DisplayNameFor(model => model.PropertyModeId)
         </th>
         <th></th>
     </tr>
@@ -56,12 +56,12 @@
             @Html.DisplayFor(modelItem => item.ModifiedDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProperyModeId)
+            @Html.DisplayFor(modelItem => item.PropertyModeId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
         </td>
     </tr>
 }

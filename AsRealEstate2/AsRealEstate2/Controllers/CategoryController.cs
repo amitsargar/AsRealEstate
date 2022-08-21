@@ -38,7 +38,7 @@ namespace AsRealEstate2.Controllers
         }
         public ActionResult Edit(int Id)
         {
-            var category = db.Categories.Single(c => c.Id == Id);
+            var category = db.Categories.Single(c => c.CategoryId == Id);
             return View(category);
         }
 
@@ -63,7 +63,7 @@ namespace AsRealEstate2.Controllers
                 }
                 return View();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 return View();
             }
@@ -71,20 +71,20 @@ namespace AsRealEstate2.Controllers
 
         public ActionResult Details(int Id)
         {
-            var category = db.Categories.Single(c => c.Id == Id);
+            var category = db.Categories.Single(c => c.CategoryId == Id);
             return View(category);
         }
 
         public ActionResult Delete(int Id)
         {
-            var category = db.Categories.Single(c => c.Id == Id);
+            var category = db.Categories.Single(c => c.CategoryId == Id);
             return View(category);
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int Id)
         {
-            var category = db.Categories.Single(c => c.Id == Id);
+            var category = db.Categories.Single(c => c.CategoryId == Id);
             db.Categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");

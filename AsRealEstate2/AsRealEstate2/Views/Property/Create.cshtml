@@ -1,4 +1,4 @@
-﻿@model AsRealEstate2.Models.Property
+﻿@model AsRealEstate2.Models.ListedProperty
 
 @{
     ViewBag.Title = "Create";
@@ -12,14 +12,22 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Property</h4>
+        <h4>ListedProperty</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.PropertModeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PropertyModeID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PropertModeID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PropertModeID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PropertyModeID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PropertyModeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -64,19 +72,19 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Property_Completed_On, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PropertyCompletedOn, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Property_Completed_On, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Property_Completed_On, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PropertyCompletedOn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PropertyCompletedOn, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.lift, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Lift, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.lift)
-                    @Html.ValidationMessageFor(model => model.lift, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Lift)
+                    @Html.ValidationMessageFor(model => model.Lift, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
