@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PropertyController.cs" />
     <Compile Include="Controllers\PropertyModeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\StateController.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Property.cs" />
     <Compile Include="Models\PropertyMode.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\State.cs" />
@@ -228,6 +230,11 @@
     <Content Include="Views\Member\Details.cshtml" />
     <Content Include="Views\Member\Delete.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Property\Index.cshtml" />
+    <Content Include="Views\Property\Create.cshtml" />
+    <Content Include="Views\Property\Edit.cshtml" />
+    <Content Include="Views\Property\Details.cshtml" />
+    <Content Include="Views\Property\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

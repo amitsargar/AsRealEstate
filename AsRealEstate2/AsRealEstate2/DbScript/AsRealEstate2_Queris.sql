@@ -98,3 +98,31 @@ CREATE TABLE Locations(
 	ModifiedDate datetime NULL,
 	CityId int FOREIGN KEY REFERENCES Cities (Id)
 );
+create Table Properties
+(
+	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PropertModeID int  FOREIGN KEY REFERENCES PropertyModes (Id),	
+	Size  decimal(10,0) NOT NULL,
+	OwnerID int NOT NULL,
+	Prize decimal(5,2) NOT NULL,
+	Bedroom int,
+	Bathroom int,
+	Property_Completed_On Datetime,  
+	lift bit,
+	Balcony int,
+	Backyard bit,
+	SwimingPool bit,
+	Parking int,
+	Comment nvarchar(100),
+	Rating decimal(1,1),
+	CountryId int FOREIGN KEY REFERENCES Countries (Id),
+	StateId int FOREIGN KEY REFERENCES States (Id),
+	CityId int FOREIGN KEY REFERENCES Cities (Id),
+	LocationId int FOREIGN KEY REFERENCES Locations (Id),
+	Address nvarchar(100) NOT NULL,
+	PinCode int,
+	CreatedBy int,
+	CreatedDate DateTime,
+	ModifiedBy int,
+	ModifiedDate DateTime
+);
