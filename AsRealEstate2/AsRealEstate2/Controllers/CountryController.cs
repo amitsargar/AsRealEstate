@@ -1,4 +1,5 @@
 ﻿using AsRealEstate2.Models;
+using AsRealEstate2.Utilities;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -11,7 +12,7 @@ namespace AsRealEstate2.Controllers
         public ActionResult Index()
         {
             var lst = db.Countries.ToList();
-
+            //Common.SendEmail();
             return View(lst);
         }
 

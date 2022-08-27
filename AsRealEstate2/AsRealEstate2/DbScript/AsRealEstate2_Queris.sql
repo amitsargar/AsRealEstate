@@ -36,6 +36,8 @@ CREATE TABLE Members(
 	);
 
 insert into Members(MemberName,DOB,ContactNo,EmailId,Gender,ImagePath,RoleId) values('Shirish','09-05-1989',7776834574,'teleshri@gmail.com',1,'',1);
+insert into Members(MemberName,DOB,ContactNo,EmailId,Gender,ImagePath,RoleId,Password) values('Amit','09-05-1989',7776834574,'amit@gmail.com',1,'',1,'123456');
+
 
 
 CREATE TABLE PropertyModes(

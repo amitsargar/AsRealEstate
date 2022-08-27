@@ -131,6 +131,7 @@
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\PropertyController.cs" />
     <Compile Include="Controllers\PropertyModeController.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\ListedProperty.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\PropertyMode.cs" />
     <Compile Include="Models\Role.cs" />
@@ -158,6 +160,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap_theme.min.css" />
     <Content Include="DbScript\AsRealEstate2_Queris.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -235,6 +238,7 @@
     <Content Include="Views\State\Delete.cshtml" />
     <Content Include="Views\State\Index.cshtml" />
     <Content Include="Views\State\Create.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
